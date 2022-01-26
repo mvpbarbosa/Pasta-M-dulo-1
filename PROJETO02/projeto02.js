@@ -49,6 +49,5 @@ else
 }
 
 
-console.log(escolha2);
-console.log(escolhaAleatoria2);
+
 console.log();
