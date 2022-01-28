@@ -1,17 +1,27 @@
 console.clear();
 const prompt = require('prompt-sync')();
 
+console.log('--------------------- JOKENPÔ ---------------------')
+console.log(`Caso você não saiba, vocês podem escolher entre pedra, 
+papel e tesoura. E funciona assim: a tesoura corta o 
+papel,  mas quebra com a pedra; o papel embrulha a pedra, 
+mas é cortado pela tesoura e a  pedra quebra 
+a tesoura e é embrulhada pelo papel.`)
+console.log('---------------------------------------------------');
 console.log('Deseja jogar Jokenpô?');
 let continuar = prompt('Resposta: ');
-console.log('---------------------------------------------------');
+console.log();
 let movimentos = ['Pedra', 'Papel', 'Tesoura'];
-console.log('Quantas rodadas você deseja jogar? ');
-let rodadas = +prompt('Resposta: ');
 console.log('---------------------------------------------------');
 let vitComp = 0;
 let vitJogador = 0;
 
-do 
+while (continuar == 'sim' || continuar == 'Sim' || continuar == 'SIM' || continuar == 's' || continuar == 'S')
+{
+    console.log('Quantas rodadas você deseja jogar? ');
+    let rodadas = +prompt('Resposta: ');
+    console.log('---------------------------------------------------');
+    do 
 {
     for (let contadorRodadas = 0; contadorRodadas < rodadas; contadorRodadas++)
     {
@@ -19,10 +29,10 @@ do
         console.log();
         console.log(`Pedra = 1 | Papel = 2 | Tesoura = 3`);
         let escolha = +prompt('Escolha seu movimento: ');
+        console.log();
         let escolha2 = movimentos[escolha - 1];
         let escolhaAleatoria = Math.trunc(Math.random() * 3);
         let escolhaAleatoria2 = movimentos[escolhaAleatoria]
-        console.log();
 
         while (escolha < 1 || escolha > 3)
         {   
@@ -32,6 +42,7 @@ do
             console.log();
             console.log(`Pedra = 1 | Papel = 2 | Tesoura = 3`);
             escolha = +prompt('Escolha seu movimento: ');
+            escolha2 = movimentos[escolha - 1];
 
             if (escolha == 1 || escolha == 2 || escolha == 3)
             {
@@ -39,8 +50,8 @@ do
             }
 
         }
-        console.log(`O jogador escolheu ${escolha2} e o computador escolheu ${escolhaAleatoria2}`);
-        console.log('---------------------------------------------------');
+        console.log(`O jogador escolheu: ${escolha2} 
+O computador escolheu: ${escolhaAleatoria2}`);
         console.log();
 
         if (escolha2 == escolhaAleatoria2)
@@ -102,6 +113,7 @@ do
 
             }
         }
+        console.log();
         console.log(`JOGADOR ${vitJogador} X ${vitComp} COMPUTADOR`);
         console.log('---------------------------------------------------');
         console.log();
@@ -123,6 +135,11 @@ do
         continuar = prompt('Resposta: ');
         console.log();
 } 
-while (continuar == 's')
+while (continuar == 'sim' || continuar == 'Sim' || continuar == 'SIM' || continuar == 's' || continuar == 'S')
 console.log();
-
+} 
+if (continuar == 'nao' || continuar == 'não' || continuar == 'Não' || continuar == 'Nao'|| continuar == 'n' || continuar == 'N')
+{
+    console.log('Fim de Jogo!')
+}
+console.log();
