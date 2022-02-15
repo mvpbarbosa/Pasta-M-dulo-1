@@ -13,16 +13,21 @@ let continuar = prompt('Resposta: ');
 console.log();
 let movimentos = ['Pedra', 'Papel', 'Tesoura'];
 console.log('---------------------------------------------------');
-let vitComp = 0;
-let vitJogador = 0;
+
+
 
 while (continuar == 'sim' || continuar == 'Sim' || continuar == 'SIM' || continuar == 's' || continuar == 'S')
 {
-    console.log('Quantas rodadas você deseja jogar? ');
-    let rodadas = +prompt('Resposta: ');
-    console.log('---------------------------------------------------');
     do 
 {
+    let vitComp = 0;
+    let vitJogador = 0;
+    let rodadas = 0;
+    console.log('Quantas rodadas você deseja jogar? ');
+    rodadas = +prompt('Resposta: ');
+    console.log('---------------------------------------------------');
+    console.clear();
+
     for (let contadorRodadas = 0; contadorRodadas < rodadas; contadorRodadas++)
     {
         console.log(`RODADA ${contadorRodadas + 1}`);
