@@ -692,3 +692,4 @@ validacao(continuar);
 }
 
 console.log("GAME OVER...");
+//FIM DE JOGO!
